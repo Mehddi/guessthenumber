@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+.animated-title {
+  animation: changeColor 5s infinite; /* 5s = durée du cycle, infinite = en boucle */
+}
+
+@keyframes changeColor {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

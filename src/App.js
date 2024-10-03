@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
 
-  const [guess, setGuess] = useState('');
+  const [guess, setGuess] = useState(0); // Initialiser à 0 pour avoir "0" par défaut
   const [message, setMessage] = useState('');
   const [numberToGuess, setNumberToGuess] = useState(randomNumber);
   const [timeLeft, setTimeLeft] = useState(30); // Timer initialisé à 30 secondes
@@ -29,9 +30,10 @@ function App() {
       setMessage('Bravo ! Tu as deviné le nombre !');
       setNumberToGuess(Math.floor(Math.random() * 100) + 1); // Génère un nouveau nombre
       setTimeLeft(30); // Réinitialise le timer à 30 secondes
+      setGameOver(true); // Le jeu est terminé après avoir deviné
     }
 
-    setGuess(''); // Réinitialise l'input
+    // Ne pas réinitialiser `guess` ici pour garder la valeur dans le champ.
   };
 
   // Fonction pour mettre à jour la supposition de l'utilisateur
@@ -60,7 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Guess the Number</h1>
+      <h1 className="animated-title">Guess the Number</h1>
       <p>Devine un nombre entre 1 et 100 :</p>
 
       {!gameStarted ? (
@@ -69,7 +71,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <input 
             type="number" 
-            value={guess} 
+            value={guess} // Garde la valeur dans l'input après soumission
             onChange={handleChange} 
             placeholder="Entrer un nombre" 
             disabled={gameOver} // Désactive l'input si le jeu est terminé
