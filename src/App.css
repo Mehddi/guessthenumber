@@ -59,3 +59,11 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  background-image: url('./assets/matrix.gif'); /* Chemin relatif du GIF */
+  background-size: cover;      /* Couvre tout l'écran */
+  background-position: center; /* Centre le GIF */
+  height: 100vh;               /* Utilise toute la hauteur de l'écran */
+  background-repeat: no-repeat; /* Ne répète pas le GIF */
+}
