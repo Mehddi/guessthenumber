@@ -32,6 +32,10 @@
   animation: changeColor 5s infinite; /* 5s = durée du cycle, infinite = en boucle */
 }
 
+p {
+  color: aliceblue;
+}
+
 @keyframes changeColor {
   0% {
     color: red;
