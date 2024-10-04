@@ -1,11 +1,24 @@
 .App {
   text-align: center;
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* S'assure que body et html prennent toute la hauteur */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+* {
+  margin: 1;
+  padding: 0.1px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
